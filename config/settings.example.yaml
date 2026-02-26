@@ -1,0 +1,32 @@
+gmail:
+  credentials_path: "config/credentials.json"
+  token_path: "config/token.json"
+  allowed_senders:
+    - "newsletter@example.com"
+    - "digest@techblog.com"
+  max_results: 10
+
+web_sources:
+  - name: "TechBlog"
+    url: "https://example.com/blog"
+    type: "rss"
+    rss_url: "https://example.com/feed"
+  - name: "NewsSite"
+    url: "https://news.example.com"
+    type: "html"
+    selector: "article a:first-of-type"
+
+notebooklm:
+  chrome_user_data_dir: "~/Library/Application Support/Google/Chrome"
+  chrome_profile: "Default"
+  timeout_seconds: 300
+  retry_count: 2
+
+telegram:
+  bot_token: "${TELEGRAM_BOT_TOKEN}"
+  channel_id: "${TELEGRAM_CHANNEL_ID}"
+
+storage:
+  db_path: "data/lettercast.db"
+  temp_audio_dir: "data/tmp"
+  max_age_hours: 24

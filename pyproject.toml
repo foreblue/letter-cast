@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "letter-cast"
+version = "0.1.0"
+description = "개인용 멀티 채널 팟캐스트 자동화 시스템"
+authors = ["dysim"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+playwright = "^1.49"
+google-api-python-client = "^2.154"
+google-auth-oauthlib = "^1.2"
+feedparser = "^6.0"
+beautifulsoup4 = "^4.12"
+python-telegram-bot = "^21.7"
+pyyaml = "^6.0"
+python-dotenv = "^1.0"
+aiosqlite = "^0.20"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.8"
+black = "^24.10"
+pytest = "^8.3"
+pytest-asyncio = "^0.24"
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W"]
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
